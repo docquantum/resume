@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Shchur</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
+</head>
+
+<script>
+    window.onload = () => {
+        VANTA.DOTS({
+            el: "#background",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x7d06c3,
+            color2: 0xe8615a,
+            backgroundColor: 0x0,
+            spacing: 24.00,
+            showLines: true
+        })
+    }
+</script>
+
+<body>
+    <div id="background"></div>
+    <div class="container">
+        $body$
+    </div>
+
+</body>
+
+</html>

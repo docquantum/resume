@@ -1,0 +1,27 @@
+name: Build Resume
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Pandoc
+      run: sudo apt-get install -y pandoc texlive-xetex
+
+    - name: Build HTML and PDF
+      run: |
+        mkdir build
+        gpp -H -DPUBLIC -o build/pub.md resume.md 
+        gpp -H -o build/priv.md resume.md
+        pandoc -s build/pub.md -o build/resume-public.html --template=template.html
+        pandoc build/pub.md -o build/resume-public.pdf --pdf-engine=xelatex
+        pandoc build/priv.md resume.md -o build/resume-private.pdf --pdf-engine=xelatex
+        # rm build/pub.md build/priv.md
+
+    - name: Deploy to GitHub Pages
+      run: | 
+        # Commands to deploy to GitHub Pages or another web host

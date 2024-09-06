@@ -1,0 +1,173 @@
+/*
+  Based on https://codepen.io/marcwoodyard/pen/eYvmxog
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&amp;display=swap");
+
+:root {
+    --colors-bg-300: #1e181eE0;
+    --colors-bg-500: #191a1eE0;
+    --colors-primary-50: #fbf3ff;
+    --colors-primary-100: #f5e3ff;
+    --colors-primary-200: #edcdff;
+    --colors-primary-300: #dfa5ff;
+    --colors-primary-400: #cc6cff;
+    --colors-primary-500: #b935ff;
+    --colors-primary-600: #a80fff;
+    --colors-primary-700: #9d00ff;
+    --colors-primary-800: #7d06c3;
+    --colors-primary-900: #67079c;
+    --colors-primary-950: #470076;
+    --colors-secondary-500: #e8615a;
+    --colors-secondary-900: #3c181a;
+    --colors-tertiary-500: #fecb3f;
+    --ui-glow: 0 0 0.125rem var(--colors-primary-500);
+    --ui-glow-color: currentcolor;
+    --ui-glow-text: 0rem -0.33rem 2rem var(--ui-glow-color);
+    --ui-notch-amount: 1rem;
+    --ui-notch-hypotenuse: 1.3rem;
+    /* hypothenuse of --ui-notch-amount */
+    --ui-notch-path: polygon(0 0,
+            100% 0,
+            100% calc(100% - var(--ui-notch-amount) + 2px),
+            calc(100% - var(--ui-notch-amount) + 2px) 100%,
+            0 100%);
+}
+
+/* Reset positions and sizes */
+* {
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Add padding to text elemenets */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    padding: 0.5rem;
+}
+
+ul {
+    margin-left: 1rem;
+    list-style-type: '-';
+}
+
+li {
+    padding: 0.125rem;
+    padding-left: 0.5rem;
+}
+
+html,
+body {
+    color: var(--colors-primary-500);
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    font-size: 100%;
+    line-height: 1.4;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 1rem 0 0.5rem 0;
+    width: 80%;
+    gap: 1rem;
+}
+
+a {
+    color: var(--colors-primary-500);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--colors-primary-300);
+}
+
+hr {
+    display: block;
+    height: 0.125rem;
+    border: 0;
+    border-top: 0.125rem solid var(--colors-primary-500);
+    width: 100%;
+
+}
+
+#background {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: var(--colors-tertiary-500);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-shadow: var(--ui-glow-text);
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--colors-primary-400)
+}
+
+.content {
+    background-color: var(--colors-bg-300);
+    border: 2px solid var(--colors-primary-600);
+    clip-path: var(--ui-notch-path);
+    padding: 0.75rem;
+    padding-bottom: var(--ui-notch-amount);
+}
+
+.content::before {
+    background-color: var(--colors-primary-600);
+    bottom: 5px;
+    content: "";
+    display: block;
+    height: 3px;
+    position: absolute;
+    right: -6px;
+    top: auto;
+    transform: rotate(-45deg);
+    width: var(--ui-notch-hypotenuse);
+    z-index: 100;
+}
+
+.content section {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-top: 0.125rem solid var(--colors-primary-600);
+}
+
+#summary {
+    border-color: var(--colors-secondary-500);
+    color: var(--colors-secondary-500);
+}
+
+#summary::before {
+    background-color: var(--colors-secondary-500);
+}
