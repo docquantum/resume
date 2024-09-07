@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&amp;display=swap");
+
+:root {
+    --primary-font: "Rajdhani", sans-serif;
+}
+
+/* Reset positions and sizes */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Text elements */
+body {
+    font-family: var(--primary-font);
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+    background-color: var(--bg-color);
+    margin: 1in;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #67079c;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+p,
+ul,
+li {
+    margin-bottom: 0.75rem;
+}
+
+ul {
+    margin-left: 1rem;
+    list-style-type: disc;
+}
+
+a {
+    color: var(--font-color);
+    text-decoration: underline;
+}
+
+.container {
+    width: 100%;
+    padding: 0;
+}
+
+section+section {
+    padding-top: 0.5rem;
+}
+
+header {
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.content {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    border-bottom: solid 1px black;
+}
+
+.subtext {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.position {
+    font-weight: 700;
+}
+
+.links span {
+    margin: 0;
+    padding: 0;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+    padding-bottom: 1rem;
+    border-bottom: solid 1px black;
+    width: 100%;
+    text-align: center;
+}
+
+#summary {
+    padding-bottom: 1rem;
+    border-bottom: solid 1px black;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.links span+span {
+    padding-left: 0.25rem;
+    border-left: solid 1px black;
+}
+
+#github a,
+#website a {
+    font-size: 0;
+    visibility: hidden;
+}
+
+#github a[href]::after,
+#website a[href]::after {
+    content: attr(href);
+    visibility: visible;
+    font-size: initial;
+}
+
+@media print {
+    @page {
+        margin: 0.25in;
+    }
+
+    body {
+        margin: 0.25in;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid;
+    }
+
+    p {
+        page-break-inside: avoid;
+    }
+}

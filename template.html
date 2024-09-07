@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Shchur</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>$title$</title>
+    <link rel="stylesheet" href="cyber.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
 </head>
@@ -27,6 +27,29 @@
             spacing: 24.00,
             showLines: true
         })
+
+        const date = document.querySelector('#present');
+        if (date) {
+            let parts = date.innerText.split('–');
+            let start = parts[0];
+
+            function updateDate() {
+                const d = new Date();
+                const year = d.getFullYear();
+                const month = String(d.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+                const day = String(d.getDate()).padStart(2, '0');
+                const hours = String(d.getHours()).padStart(2, '0');
+                const minutes = String(d.getMinutes()).padStart(2, '0');
+                const seconds = String(d.getSeconds()).padStart(2, '0');
+
+                const formattedDateTime = year + '.' + month + '.' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+                date.innerText = start + '–' + formattedDateTime;
+            }
+
+            updateDate();
+
+            setInterval(updateDate, 1000);
+        }
     }
 </script>
 
@@ -35,7 +58,6 @@
     <div class="container">
         $body$
     </div>
-
 </body>
 
 </html>
