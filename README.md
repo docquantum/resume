@@ -3,7 +3,7 @@
 In looking for a good way to manage my resume, in a way that's easy to write up, as well as easy to render to PDF and a website, I created this repo which utilizes Pandoc, GPP, and Chromium.
 
 **Example:**
-| [Input Markdown](resume.md) | [Output HTML](docquantum.github.com/) | [Output PDF](docquantum.github.com/) |
+| [Input Markdown](resume.md) | [Output HTML](https://docquantum.github.io/resume/) | [Output PDF](https://docquantum.github.io/resume/resume.pdf) |
 | :-: | :-: | :-: |
 
 ## Usage
