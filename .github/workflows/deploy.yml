@@ -1,6 +1,11 @@
 name: Build and Deploy
 
-on: [push]
+# Only run on pushes to main or manual triggers
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
