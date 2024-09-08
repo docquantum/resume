@@ -222,6 +222,20 @@ h6 {
     font-size: 0.75rem;
 }
 
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.footer p {
+    text-shadow: var(--ui-glow-text);
+    color: var(--colors-secondary-500);
+}
+
 @media (min-width: 768px) {
     p {
         text-align: justify;

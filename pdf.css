@@ -19,6 +19,7 @@ body {
     color: black;
     background-color: var(--bg-color);
     margin: 1in;
+    position: relative;
 }
 
 h1,
@@ -127,6 +128,15 @@ a {
     content: attr(href);
     visibility: visible;
     font-size: initial;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    width: 100%;
 }
 
 @media print {

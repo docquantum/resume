@@ -139,3 +139,8 @@ Collaborated with high-profile clients in Night City's underworld to deliver bes
 </section>
 </div>
 <#endif>
+
+<div class="footer">
+Built using [https://github.com/docquantum/resume](https://github.com/docquantum/resume)
+
+</div>
