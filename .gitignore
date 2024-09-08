@@ -1,4 +1,1 @@
-*.pdf
-pub.md
-priv.md
-resume-*
+build/
